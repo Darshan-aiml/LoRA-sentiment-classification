@@ -27,28 +27,8 @@ This project pairs a verified rank-16 LoRA adapter with an asynchronous, typed F
 
 ## 3. Screenshots
 
-*(Screenshots can be added here when the interface is running locally or deployed)*
-
-```text
-+--------------------------------------------------------------------------------------------------+
-|  LoRA Sentiment AI  [PEFT r=16]                                      [API Ready (MPS)] [API Docs]|
-+--------------------------------------------------------------------------------------------------+
-|  [ Single Text Analyzer ] [ Batch Evaluation (up to 32) ]              SST-2 Benchmark Validated  |
-|                                                                                                  |
-|  Input Text (Max 1,000 chars)                    Predicted Sentiment: POSITIVE (Class 1)         |
-|  +--------------------------------------------+  Softmax Confidence: 99.92%                      |
-|  | This product is fantastic and works        |                                                  |
-|  | perfectly right out of the box.            |  Softmax Distribution:                           |
-|  +--------------------------------------------+  Positive: [==========================] 99.92%   |
-|  [Clear]               [ Analyze Sentiment ]     Negative: [=                         ]  0.08%   |
-|                                                                                                  |
-|  Try Example Prompts:                            Model: distilbert-base-uncased | PEFT / LoRA r=16|
-|  [Strong Positive] [Subtle Positive]             Note: Uncalibrated relative scores on binary SST-2|
-|  [Strong Negative] [Nuanced Negative]                                                            |
-+--------------------------------------------------------------------------------------------------+
-|  API Health & System Diagnostics: Connection: Connected | Device: MPS | Base: DistilBERT | r: 16 |
-+--------------------------------------------------------------------------------------------------+
-```
+![LoRA Sentiment AI Dashboard](assets/dashboard.png)
+*Interactive research dashboard showcasing parameter-efficient sentiment analysis, real-time backend health monitoring (`API Ready (CPU)`), prompt testing, and system diagnostics.*
 
 ---
 
