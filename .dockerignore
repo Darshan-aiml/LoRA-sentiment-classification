@@ -1,0 +1,10 @@
+.git
+.github
+.venv
+frontend
+tests
+*.pyc
+__pycache__
+.pytest_cache
+.DS_Store
+.env
