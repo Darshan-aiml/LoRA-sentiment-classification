@@ -26,14 +26,18 @@ export function App() {
     try {
       const data = await fetchHealth();
       setHealth(data);
-    } catch {
+    } catch (err: unknown) {
+      const errorMsg =
+        err && typeof err === 'object' && 'message' in err
+          ? (err as { message: string }).message
+          : 'Failed to connect to backend inference server.';
       setHealth({
         status: 'unavailable',
         model_loaded: false,
         device: 'unknown',
         base_model: 'distilbert/distilbert-base-uncased',
         adapter_path: 'Models/lora-sst2-adapter',
-        details: 'Failed to connect to backend inference server.',
+        details: errorMsg,
       });
     } finally {
       setLoadingHealth(false);

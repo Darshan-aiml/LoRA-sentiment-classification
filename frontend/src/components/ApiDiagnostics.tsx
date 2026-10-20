@@ -104,10 +104,21 @@ export const ApiDiagnostics: React.FC<ApiDiagnosticsProps> = ({
         </div>
       </div>
 
+      {/* Diagnostic status banner if offline */}
+      {!isReady && health?.details && (
+        <div className="p-3 rounded-lg bg-rose-950/40 border border-rose-800/60 text-xs text-rose-300 space-y-1">
+          <div className="flex items-center gap-1.5 font-semibold text-rose-200">
+            <AlertTriangle className="w-4 h-4 text-rose-400 shrink-0" />
+            <span>Connection Diagnostic</span>
+          </div>
+          <p className="font-mono text-[11px] leading-relaxed break-words">{health.details}</p>
+        </div>
+      )}
+
       {/* Backend URL information */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between text-[11px] font-mono text-slate-500 pt-2 border-t border-slate-800/60 gap-1">
-        <span>Active Endpoint: <span className="text-slate-400">{baseUrl}</span></span>
-        {health?.details && (
+        <span>Active Endpoint: <span className="text-slate-300 font-medium">{baseUrl}</span></span>
+        {isReady && health?.details && (
           <span className="text-slate-400 italic truncate max-w-md" title={health.details}>
             Status: {health.details}
           </span>
